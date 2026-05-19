@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.game-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    flex-wrap: wrap;
+}
+
+.score, .high-score, .snake-length, .status {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.status {
+    color: #00ff88;
+}
+
+#gameCanvas {
+    border: 3px solid #00ff88;
+    border-radius: 10px;
+    background: #0a0a0a;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4);
+}
+
+#startBtn {
+    background: linear-gradient(45deg, #00ff88, #00cc6a);
+    color: #000;
+}
+
+#pauseBtn {
+    background: linear-gradient(45deg, #ffaa00, #ff8800);
+    color: #000;
+}
+
+#resetBtn {
+    background: linear-gradient(45deg, #ff4444, #cc0000);
+    color: #fff;
+}
+
+#toggleAI {
+    background: linear-gradient(45deg, #44aaff, #0066cc);
+    color: #fff;
+}
+
+#strategy-selector {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#strategy-selector label {
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+#strategy {
+    padding: 8px 16px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    cursor: pointer;
+}
+
+#strategy option {
+    background: #1a1a2e;
+    color: #fff;
+}
+
+.strategy-info {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #44aaff;
+}
+
+.ai-info {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #aaa;
+}
+
+.ai-info span {
+    color: #44aaff;
+    font-weight: bold;
+}
+
+.algorithm-description {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.algorithm-description h3 {
+    color: #00ff88;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.desc-item {
+    text-align: left;
+    padding: 10px 15px;
+    margin: 8px 0;
+    background: rgba(0, 255, 136, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid #00ff88;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .game-info {
+        gap: 15px;
+        font-size: 1rem;
+    }
+    
+    #gameCanvas {
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+    }
+    
+    .controls {
+        gap: 10px;
+    }
+    
+    button {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇智能体</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🐍 计算机智能体 - 贪吃蛇</h1>
+        <div class="game-info">
+            <div class="score">得分: <span id="score">0</span></div>
+            <div class="high-score">最高分: <span id="high-score">0</span></div>
+            <div class="snake-length">蛇长度: <span id="snake-length">1</span></div>
+            <div class="status" id="status">准备开始</div>
+        </div>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div class="controls">
+            <button id="startBtn">开始游戏</button>
+            <button id="pauseBtn">暂停</button>
+            <button id="resetBtn">重置</button>
+            <button id="toggleAI">切换AI模式</button>
+        </div>
+        <div id="strategy-selector" style="display: none;">
+            <label for="strategy">选择AI策略:</label>
+            <select id="strategy">
+                <option value="astar">A* 寻路算法</option>
+                <option value="advanced">高级 AI (多目标优化)</option>
+                <option value="ml">强化学习 (Q-Learning)</option>
+            </select>
+            <div class="strategy-info">
+                当前策略: <span id="current-strategy">A* 寻路</span>
+            </div>
+        </div>
+        <div class="ai-info">
+            <div>AI模式: <span id="ai-status">关闭</span></div>
+            <div>操作说明: 方向键或WASD控制</div>
+        </div>
+        <div class="algorithm-description">
+            <h3>算法说明</h3>
+            <div class="desc-item">
+                <strong>A* 寻路算法:</strong> 使用启发式搜索找到最短路径到达食物
+            </div>
+            <div class="desc-item">
+                <strong>高级 AI:</strong> 综合考虑食物距离、安全区域、危险评估等多因素
+            </div>
+            <div class="desc-item">
+                <strong>强化学习:</strong> 基于Q值的决策模型，模拟训练后的智能决策
+            </div>
+        </div>
+    </div>
+    <script src="snake.js"></script>
+</body>
+</html>
